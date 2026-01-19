@@ -21,9 +21,18 @@ def sort_dict(new_d):
     for k, v in new_d.items():
         split_d.append(dict([("char", k), ("num", v)]))
     split_d.sort(reverse=True, key=sort_key)
-#    chars_sorted_list = []
-#    for k, v in split_d.items():
-#        if char.isalpha():
-#            chars_sorted_list.append(dict([(k, v)]))
-#    return chars_sorted_list
     return split_d
+
+def get_word_len(file_contents):
+#    lowered_text = file_contents.lower()
+#    sorted_text = sorted(lowered_text)
+    d7 = {"Seven Letter Words":
+          {"Number": 0,
+           "Words": []}
+          }
+    words = file_contents.split()
+    for word in words:
+        if (len(word) == 7) & (len(d7["Seven Letter Words"]["Words"]) < 10):
+            d7["Seven Letter Words"]["Number"] += 1
+            d7["Seven Letter Words"]["Words"].append(word) 
+    return d7

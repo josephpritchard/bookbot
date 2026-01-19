@@ -1,5 +1,5 @@
 import sys
-from stats import get_word_num, get_char_stats, sort_key, sort_dict
+from stats import *
 
 def get_book_text(filepath):
     with open(filepath) as f:
@@ -33,4 +33,6 @@ def main():
     print_report(sorted_dict)
     print("============= END ===============")
 
+    d7 = get_word_len(text)
+    print(f"d7 is {d7}")
 main()
